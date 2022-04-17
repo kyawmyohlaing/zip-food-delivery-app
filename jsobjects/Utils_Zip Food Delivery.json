@@ -1,0 +1,37 @@
+{
+  "unpublishedCollection": {
+    "name": "Utils",
+    "pageId": "Zip Food Delivery",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tordersStatusoptions: [\n  {\n    \"label\": \"Order Placed\",\n    \"value\": \"ORDER PLACED\"\n  },\n  {\n    \"label\": \"Delayed\",\n    \"value\": \"DELAYED\"\n  },\n  {\n    \"label\": \"Delivered\",\n    \"value\": \"DELIVERED\"\n  },\n\t{\n    \"label\": \"Refund\",\n    \"value\": \"REFUND\"\n  }\n\t],\n\t\n\tupdateOrder: async () => {\n\t\tawait edit_order.run();\n\t\tawait fetch_orders.run();\n\t\treturn closeModal('edit_modal');\n\t},\n\t\n\trefundOrder: async () => {\n\t\tawait StripeRefund.run();\n\t\tawait update_order_amount.run();\n\t\treturn await fetch_orders.run();\n\t},\n\taddOrder: async () => {\n\t\tconst orderId = this.generateRandomID();\n\t\tawait add_order.run({ id: orderId});\n\t\tawait add_products.run({ id: orderId});\n\t\tawait fetch_orders.run();\n\t\tawait resetWidget('add_modal');\n\t\treturn closeModal('add_modal');\n\t},\n\tgenerateRandomID: () => {\n\t\treturn '_' + Math.random().toString(36).substr(2,9);\n\t}\n\t\n\t}\n",
+    "variables": [
+      {
+        "name": "ordersStatusoptions",
+        "value": [
+          {
+            "label": "Order Placed",
+            "value": "ORDER PLACED"
+          },
+          {
+            "label": "Delayed",
+            "value": "DELAYED"
+          },
+          {
+            "label": "Delivered",
+            "value": "DELIVERED"
+          },
+          {
+            "label": "Refund",
+            "value": "REFUND"
+          }
+        ]
+      }
+    ]
+  },
+  "id": "Zip Food Delivery_Utils",
+  "deleted": false,
+  "gitSyncId": "625ad9580d3d384069c17f3f_625b9c740d3d384069c1a13e"
+}
