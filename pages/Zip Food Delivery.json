@@ -2072,7 +2072,7 @@
                       "overflow": "NONE",
                       "parentColumnSpace": 5.365234375,
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 19,
+                      "leftColumn": 11,
                       "dynamicBindingPathList": [
                         {
                           "key": "text"
@@ -2080,9 +2080,9 @@
                       ],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
-                      "text": "Total Amount:\n{{orders_table.selectedRow.Total_Amount}}",
+                      "text": "Total Amount:{{orders_table.selectedRow.Total_Amount}}",
                       "key": "1plv9ejyot",
-                      "rightColumn": 43,
+                      "rightColumn": 37,
                       "textAlign": "LEFT",
                       "widgetId": "0ehf28fqjq",
                       "isVisible": true,
